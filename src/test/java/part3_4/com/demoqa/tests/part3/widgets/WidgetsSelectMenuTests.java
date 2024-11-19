@@ -25,4 +25,13 @@ public class WidgetsSelectMenuTests extends BaseTest {
         Assert.assertFalse(actualSelectedOptions.contains("Opel"));
         Assert.assertTrue(actualSelectedOptions.contains("Audi"));
     }
+    @Test
+    public void TestSelectMenuOldSelect()
+    {
+        WidgetsSelectMenuPage selectMenuPage = homePage.goToWidgets().clickSelectMenu();
+        selectMenuPage.selectOldSelectMenu("8");
+
+        String actualSelectedOption = selectMenuPage.getSelectedOption();
+        Assert.assertTrue(actualSelectedOption.contains("Indigo"));
+    }
 }

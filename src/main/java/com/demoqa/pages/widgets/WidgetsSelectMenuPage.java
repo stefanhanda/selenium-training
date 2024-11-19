@@ -10,7 +10,13 @@ import static utilities.JavaScriptUtility.*;
 public class WidgetsSelectMenuPage extends WidgetsPage
 {
     private final By standardMultiSelect = By.id("cars");
+    private final By oldSelectMenu = By.id("oldSelectMenu");
 
+    public void selectOldSelectMenu(String text)
+    {
+        scrollToElementJS(oldSelectMenu);
+        selectByValue(oldSelectMenu, text);
+    }
     public void selectStandardMulti(String text)
     {
         scrollToElementJS(standardMultiSelect);
@@ -29,5 +35,9 @@ public class WidgetsSelectMenuPage extends WidgetsPage
     public List<String> getAllSelectedStandardMultiOptions()
     {
         return getAllSelectedOptions(standardMultiSelect);
+    }
+    public String getSelectedOption()
+    {
+        return find(oldSelectMenu).getText();
     }
 }
