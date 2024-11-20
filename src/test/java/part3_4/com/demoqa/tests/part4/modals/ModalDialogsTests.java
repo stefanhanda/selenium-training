@@ -12,7 +12,7 @@ public class ModalDialogsTests extends BaseTest
     @Test
     public void TestSmallModalDialog()
     {
-        ModalDialogsPage modalDialogsPage = homePage.goToAlerts().clickModalDialogsElement();
+        ModalDialogsPage modalDialogsPage = homePage.goToAlertsFramesWindows().clickModalDialogsElement();
         modalDialogsPage.clickSmallModalButton();
         _delay(500);
         String actualText = modalDialogsPage.getSmallModalText();
@@ -23,7 +23,7 @@ public class ModalDialogsTests extends BaseTest
     @Test
     public void TestLargeModalDialog()
     {
-        ModalDialogsPage modalDialogsPage = homePage.goToAlerts().clickModalDialogsElement();
+        ModalDialogsPage modalDialogsPage = homePage.goToAlertsFramesWindows().clickModalDialogsElement();
         modalDialogsPage.clickLargeModalButton();
         _delay(500);
         String actualText = modalDialogsPage.getLargeModalText();
