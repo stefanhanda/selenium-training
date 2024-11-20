@@ -11,8 +11,8 @@ public class FormsRadioButtonTests extends BaseTest
     public void TestFemaleRadioButton()
     {
         FormsPracticePage formsPage = homePage.goToForms().clickPracticeForm();
-        formsPage.ClickFemaleRadioButton();
-        boolean isFemaleRadioButtonSelected = formsPage.IsFemaleRadioButtonClicked();
+        formsPage.clickFemaleRadioButton();
+        boolean isFemaleRadioButtonSelected = formsPage.isFemaleRadioButtonClicked();
 
         Assert.assertTrue(isFemaleRadioButtonSelected, "\n Female Radio Button is not selected\n");
     }
@@ -20,15 +20,15 @@ public class FormsRadioButtonTests extends BaseTest
     public void TestMaleRadioButton()
     {
         FormsPracticePage formsPage = homePage.goToForms().clickPracticeForm();
-        formsPage.ClickMaleRadioButton();
-        Assert.assertTrue(formsPage.IsMaleRadioButtonClicked(),"\n Male Radio Button is not selected \n");
+        formsPage.clickMaleRadioButton();
+        Assert.assertTrue(formsPage.isMaleRadioButtonClicked(),"\n Male Radio Button is not selected \n");
     }
     @Test
     public void TestOtherRadioButton()
     {
         FormsPracticePage formsPage = homePage.goToForms().clickPracticeForm();
-        formsPage.ClickOtherButton();
-        Assert.assertTrue(formsPage.IsOtherRadioButtonClicked(),"\n Other Radio Button is not selected \n");
+        formsPage.clickOtherButton();
+        Assert.assertTrue(formsPage.isOtherRadioButtonClicked(),"\n Other Radio Button is not selected \n");
     }
     @Test
     public void TestRadioButtonsInteraction()
@@ -39,20 +39,20 @@ public class FormsRadioButtonTests extends BaseTest
         FormsPracticePage formsPage = homePage.goToForms().clickPracticeForm();
 
         // Male RB clicked => Female & Other not clicked
-        formsPage.ClickMaleRadioButton();
-        if(formsPage.IsMaleRadioButtonClicked() == (formsPage.IsFemaleRadioButtonClicked() | formsPage.IsOtherRadioButtonClicked()))
+        formsPage.clickMaleRadioButton();
+        if(formsPage.isMaleRadioButtonClicked() == (formsPage.isFemaleRadioButtonClicked() | formsPage.isOtherRadioButtonClicked()))
         {
             ActualResult = false;
         }
         // Female RB clicked => Male & Other RB not clicked
-        formsPage.ClickFemaleRadioButton();
-        if(formsPage.IsFemaleRadioButtonClicked() == (formsPage.IsMaleRadioButtonClicked() | formsPage.IsOtherRadioButtonClicked()))
+        formsPage.clickFemaleRadioButton();
+        if(formsPage.isFemaleRadioButtonClicked() == (formsPage.isMaleRadioButtonClicked() | formsPage.isOtherRadioButtonClicked()))
         {
             ActualResult = false;
         }
         // Other RB clicked => Male & Female RB not clicked
-        formsPage.ClickOtherButton();
-        if(formsPage.IsOtherRadioButtonClicked() == (formsPage.IsMaleRadioButtonClicked() | formsPage.IsFemaleRadioButtonClicked()))
+        formsPage.clickOtherButton();
+        if(formsPage.isOtherRadioButtonClicked() == (formsPage.isMaleRadioButtonClicked() | formsPage.isFemaleRadioButtonClicked()))
         {
             ActualResult = false;
         }

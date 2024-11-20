@@ -12,11 +12,11 @@ public class CheckBoxTests extends BaseTest
     {
         FormsPracticePage formsPage = homePage.goToForms().clickPracticeForm();
 
-        formsPage.ClickSportsCheckBox();
-        formsPage.ClickReadingCheckBox();
-        formsPage.ClickMusicCheckBox();
-        formsPage.UnClickReadingCheckBox();
+        formsPage.clickSportsCheckBox();
+        formsPage.clickReadingCheckBox();
+        formsPage.clickMusicCheckBox();
+        formsPage.unClickReadingCheckBox();
 
-        Assert.assertFalse(formsPage.IsReadingSelected(),"\nError: Reading CheckBox is Selected!\n");
+        Assert.assertFalse(formsPage.isReadingSelected(),"\nError: Reading CheckBox is Selected!\n");
     }
 }

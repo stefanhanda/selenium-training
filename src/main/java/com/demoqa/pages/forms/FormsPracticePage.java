@@ -8,48 +8,58 @@ import static utilities.JavaScriptUtility.scrollToElementJS;
 public class FormsPracticePage extends FormsPage
 {
     // Forms Page RadioButtons:
-    private By maleRadioButton =    By.id("gender-radio-1");
-    private By femaleRadioButton =  By.id("gender-radio-2");
-    private By otherRadioButton =   By.id("gender-radio-3");
+    private final By maleRadioButton =    By.id("gender-radio-1");
+    private final By femaleRadioButton =  By.id("gender-radio-2");
+    private final By otherRadioButton =   By.id("gender-radio-3");
 
     // Forms Page Checkboxes:
-    private By sportsCheckBox =     By.id("hobbies-checkbox-1");
-    private By readingCheckBox =    By.id("hobbies-checkbox-2");
-    private By musicCheckBox =      By.id("hobbies-checkbox-3");
+    private final By sportsCheckBox =     By.id("hobbies-checkbox-1");
+    private final By readingCheckBox =    By.id("hobbies-checkbox-2");
+    private final By musicCheckBox =      By.id("hobbies-checkbox-3");
+
+    // FormsPage Submit and Cancel Button
+    private final By submitButton = By.id("submit");
+    private final By closeSubmitPanelButton = By.id("closeLargeModal");
+
+    // FormsPage Text Input Fields
+    private final By firstNameField = By.id("firstName");
+    private final By lastNameField = By.id("lastName");
+    private final By emailField = By.id("userEmail");
+    private final By phoneNumberField = By.id("userNumber");
 
     // Radio Button Click Methods:
-    public void ClickMaleRadioButton()
+    public void clickMaleRadioButton()
     {
         scrollToElementJS(maleRadioButton);
         clickElementJS(maleRadioButton);
     }
-    public void ClickFemaleRadioButton()
+    public void clickFemaleRadioButton()
     {
         scrollToElementJS(femaleRadioButton);
         clickElementJS(femaleRadioButton);
     }
-    public void ClickOtherButton()
+    public void clickOtherButton()
     {
         scrollToElementJS(otherRadioButton);
         clickElementJS(otherRadioButton);
     }
 
     // Radio Button Click Checks:
-    public boolean IsMaleRadioButtonClicked()
+    public boolean isMaleRadioButtonClicked()
     {
         return find(maleRadioButton).isSelected();
     }
-    public boolean IsFemaleRadioButtonClicked()
+    public boolean isFemaleRadioButtonClicked()
     {
         return find(femaleRadioButton).isSelected();
     }
-    public boolean IsOtherRadioButtonClicked()
+    public boolean isOtherRadioButtonClicked()
     {
         return find(otherRadioButton).isSelected();
     }
 
     // CheckBox Click Methods:
-    public void ClickSportsCheckBox()
+    public void clickSportsCheckBox()
     {
         if(!find(sportsCheckBox).isSelected())
         {
@@ -57,7 +67,7 @@ public class FormsPracticePage extends FormsPage
             clickElementJS(sportsCheckBox);
         }
     }
-    public void ClickReadingCheckBox()
+    public void clickReadingCheckBox()
     {
         if(!find(readingCheckBox).isSelected())
         {
@@ -65,7 +75,7 @@ public class FormsPracticePage extends FormsPage
             clickElementJS(readingCheckBox);
         }
     }
-    public void ClickMusicCheckBox()
+    public void clickMusicCheckBox()
     {
         if(!find(musicCheckBox).isSelected())
         {
@@ -74,7 +84,7 @@ public class FormsPracticePage extends FormsPage
         }
     }
     // CheckBox UN-Click Methods:
-    public void UnClickSportsCheckBox()
+    public void unClickSportsCheckBox()
     {
         if(find(sportsCheckBox).isSelected())
         {
@@ -82,7 +92,7 @@ public class FormsPracticePage extends FormsPage
             clickElementJS(sportsCheckBox);
         }
     }
-    public void UnClickReadingCheckBox()
+    public void unClickReadingCheckBox()
     {
         if(find(readingCheckBox).isSelected())
         {
@@ -90,7 +100,7 @@ public class FormsPracticePage extends FormsPage
             clickElementJS(readingCheckBox);
         }
     }
-    public void UnClickMusicCheckBox()
+    public void unClickMusicCheckBox()
     {
         if(find(musicCheckBox).isSelected())
         {
@@ -99,17 +109,37 @@ public class FormsPracticePage extends FormsPage
         }
     }
     // Check if the Checkbox is Clicked:
-    public boolean IsSportsSelected()
+    public boolean isSportsSelected()
     {
         return find(sportsCheckBox).isSelected();
     }
-    public boolean IsReadingSelected()
+    public boolean isReadingSelected()
     {
         return find(readingCheckBox).isSelected();
     }
-    public boolean IsMusicSelected()
+    public boolean isMusicSelected()
     {
         return find(musicCheckBox).isSelected();
     }
 
+    // Submit Button Click
+    public void clickSubmitButton()
+    {
+        scrollToElementJS(submitButton);
+        clickElementJS(submitButton);
+        //click(submitButton);
+    }
+    public void clickCloseSubmitPanelButton()
+    {
+        scrollToElementJS(closeSubmitPanelButton);
+        clickElementJS(closeSubmitPanelButton);
+    }
+    public void fillFormsPageMandatoryFields(String firstName, String lastName, String email, String phoneNumber)
+    {
+        set(firstNameField,firstName);
+        set(lastNameField,lastName);
+        set(emailField,email);
+        set(phoneNumberField,phoneNumber);
+        clickMaleRadioButton();
+    }
 }
