@@ -16,4 +16,12 @@ public class SwitchToUtility extends Utility
     {
         switchTo().alert().accept();
     }
+    public static void dismissAlert()
+    {
+        switchTo().alert().dismiss();
+    }
+    public static void setPromptAlertText(String text)
+    {
+        switchTo().alert().sendKeys(text);
+    }
 }
