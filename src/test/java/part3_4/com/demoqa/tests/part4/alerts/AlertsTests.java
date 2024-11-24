@@ -63,6 +63,7 @@ public class AlertsTests extends BaseTest
     }
     public void testPromptAlertDismiss()
     {
+        //Testing Testing
         String inputText = "-!TestingXC__testing@123#=$$.!";
         AlertsPage alertsPage = homePage.goToAlertsFramesWindows().clickAlertsElement();
 
