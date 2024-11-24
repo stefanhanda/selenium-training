@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import part3_4.com.demoqa.base.BaseTest;
 
+import static com.base.BasePage._delay;
 import static utilities.SwitchToUtility.*;
 @Test
 public class AlertsTests extends BaseTest
@@ -63,7 +64,6 @@ public class AlertsTests extends BaseTest
     }
     public void testPromptAlertDismiss()
     {
-        //Testing Testing
         String inputText = "-!TestingXC__testing@123#=$$.!";
         AlertsPage alertsPage = homePage.goToAlertsFramesWindows().clickAlertsElement();
 
@@ -74,5 +74,16 @@ public class AlertsTests extends BaseTest
 
         Assert.assertFalse(actualAlertResultText.contains(inputText),
                 "The input message has been displayed after dismissing the alert!");
+    }
+    public void testTimerAlertAccept()
+    {
+        int inputTimerSeconds = 5;
+        String expectedAlertText = "This alert appeared after " + inputTimerSeconds + " seconds";
+        AlertsPage alertsPage = homePage.goToAlertsFramesWindows().clickAlertsElement();
+        alertsPage.clickTimerAlertButton();
+        _delay(inputTimerSeconds*1000);
+        String actualAlertText = getAlertText();
+        acceptAlert();
+        Assert.assertEquals(actualAlertText,expectedAlertText,"Actual and Expected results do not match!");
     }
 }

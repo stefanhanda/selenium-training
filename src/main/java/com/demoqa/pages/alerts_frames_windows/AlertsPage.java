@@ -49,4 +49,10 @@ public class AlertsPage extends AlertsFramesWindowsPage
             return ""; // Or handle the scenario when the element is not found
         }
     }
+    //Timer Alert Methods:
+    public void clickTimerAlertButton()
+    {
+        scrollToElementJS(alertTimerButton);
+        clickElementJS(alertTimerButton);
+    }
 }
