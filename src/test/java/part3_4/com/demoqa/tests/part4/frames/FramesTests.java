@@ -10,7 +10,7 @@ public class FramesTests extends BaseTest
     @Test
     public void testFramesLargeBox()
     {
-        FramesPage framesPage = homePage.goToAlertsFramesWindows().clickFramesElement();
+        FramesPage framesPage = homePage.goToAlertsFramesWindows().clickFramesMenuItem();
         String actualFrameText = framesPage.getTextInLargeFrame();
 
         String expectedFrameText = "This is a sample page";
@@ -26,7 +26,7 @@ public class FramesTests extends BaseTest
     @Test
     public void testFramesSmallBox()
     {
-        FramesPage framesPage = homePage.goToAlertsFramesWindows().clickFramesElement();
+        FramesPage framesPage = homePage.goToAlertsFramesWindows().clickFramesMenuItem();
         String actualFrameText = framesPage.getTextInSmallFrame();
 
         String expectedFrameText = "This is a sample page";

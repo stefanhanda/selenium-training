@@ -15,7 +15,7 @@ public class AlertsTests extends BaseTest
     {
         String expectedAlertsText = "You clicked a button";
 
-        AlertsPage alertsPage = homePage.goToAlertsFramesWindows().clickAlertsElement();
+        AlertsPage alertsPage = homePage.goToAlertsFramesWindows().clickAlertsMenuItem();
 
         alertsPage.clickInformationAlertButton();
         Assert.assertEquals(getAlertText(),expectedAlertsText,"\nActual and Expected text does not match\n");
@@ -27,7 +27,7 @@ public class AlertsTests extends BaseTest
     public void testConfirmationAlertAccept()
     {
         String expectedAlertResultText = "You selected Ok";
-        AlertsPage alertsPage = homePage.goToAlertsFramesWindows().clickAlertsElement();
+        AlertsPage alertsPage = homePage.goToAlertsFramesWindows().clickAlertsMenuItem();
 
         alertsPage.clickConfirmationAlertButton();
         acceptAlert();
@@ -39,7 +39,7 @@ public class AlertsTests extends BaseTest
     public void testConfirmationAlertDismiss()
     {
         String expectedAlertResultText = "You selected Cancel";
-        AlertsPage alertsPage = homePage.goToAlertsFramesWindows().clickAlertsElement();
+        AlertsPage alertsPage = homePage.goToAlertsFramesWindows().clickAlertsMenuItem();
 
         alertsPage.clickConfirmationAlertButton();
         dismissAlert();
@@ -52,7 +52,7 @@ public class AlertsTests extends BaseTest
     public void testPromptAlertAccept()
     {
         String inputText = "-!TestingXC__testing@123#=$$.!";
-        AlertsPage alertsPage = homePage.goToAlertsFramesWindows().clickAlertsElement();
+        AlertsPage alertsPage = homePage.goToAlertsFramesWindows().clickAlertsMenuItem();
 
         alertsPage.clickPromptAlertButton();
         setPromptAlertText(inputText);
@@ -65,7 +65,7 @@ public class AlertsTests extends BaseTest
     public void testPromptAlertDismiss()
     {
         String inputText = "-!TestingXC__testing@123#=$$.!";
-        AlertsPage alertsPage = homePage.goToAlertsFramesWindows().clickAlertsElement();
+        AlertsPage alertsPage = homePage.goToAlertsFramesWindows().clickAlertsMenuItem();
 
         alertsPage.clickPromptAlertButton();
         setPromptAlertText(inputText);
@@ -79,7 +79,7 @@ public class AlertsTests extends BaseTest
     {
         int inputTimerSeconds = 5;
         String expectedAlertText = "This alert appeared after " + inputTimerSeconds + " seconds";
-        AlertsPage alertsPage = homePage.goToAlertsFramesWindows().clickAlertsElement();
+        AlertsPage alertsPage = homePage.goToAlertsFramesWindows().clickAlertsMenuItem();
         alertsPage.clickTimerAlertButton();
         _delay(inputTimerSeconds*1000);
         String actualAlertText = getAlertText();

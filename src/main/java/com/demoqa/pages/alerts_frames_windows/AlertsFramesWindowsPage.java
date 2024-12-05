@@ -7,33 +7,33 @@ import static utilities.JavaScriptUtility.*;
 
 public class AlertsFramesWindowsPage extends HomePage
 {
-    private final By modalDialogsElement = By.xpath("//li[@id='item-4']//span[text()='Modal Dialogs']");
-    private final By alertElement = By.xpath("//li[@id='item-1']//span[text()='Alerts']");
-    private final By framesElement = By.xpath("//li[@id='item-2']//span[text()='Frames']");
-    private final By windowsElement = By.xpath("//li[@id='item-0']/span[text()='Browser Windows']");
+    private final By modalDialogsMenuItem = By.xpath("//li[@id='item-4']//span[text()='Modal Dialogs']");
+    private final By alertMenuItem = By.xpath("//li[@id='item-1']//span[text()='Alerts']");
+    private final By framesMenuItem = By.xpath("//li[@id='item-2']//span[text()='Frames']");
+    private final By windowsMenuItem = By.xpath("//li[@id='item-0']/span[text()='Browser Windows']");
 
-    public ModalDialogsPage clickModalDialogsElement()
+    public ModalDialogsPage clickModalDialogsMenuItem()
     {
-        scrollToElementJS(modalDialogsElement);
-        clickElementJS(modalDialogsElement);
+        scrollToElementJS(modalDialogsMenuItem);
+        clickElementJS(modalDialogsMenuItem);
         return new ModalDialogsPage();
     }
-    public AlertsPage clickAlertsElement()
+    public AlertsPage clickAlertsMenuItem()
     {
-        scrollToElementJS(alertElement);
-        clickElementJS(alertElement);
+        scrollToElementJS(alertMenuItem);
+        clickElementJS(alertMenuItem);
         return new AlertsPage();
     }
-    public FramesPage clickFramesElement()
+    public FramesPage clickFramesMenuItem()
     {
-        scrollToElementJS(framesElement);
-        clickElementJS(framesElement);
+        scrollToElementJS(framesMenuItem);
+        clickElementJS(framesMenuItem);
         return new FramesPage();
     }
-    public WindowsPage clickBrowserWindowsElement()
+    public WindowsPage clickBrowserWindowsMenuItem()
     {
-        scrollToElementJS(windowsElement);
-        clickElementJS(windowsElement);
+        scrollToElementJS(windowsMenuItem);
+        clickElementJS(windowsMenuItem);
         return new WindowsPage();
     }
 }

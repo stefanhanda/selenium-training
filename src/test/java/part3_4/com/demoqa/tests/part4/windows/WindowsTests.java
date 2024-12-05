@@ -12,7 +12,7 @@ public class WindowsTests extends BaseTest
     @Test
     public void testNewWindowURL()
     {
-        WindowsPage windowsPage = homePage.goToAlertsFramesWindows().clickBrowserWindowsElement();
+        WindowsPage windowsPage = homePage.goToAlertsFramesWindows().clickBrowserWindowsMenuItem();
         windowsPage.clickNewWindowButton();
 
         windowsPage.switchToNewWindow();
@@ -27,7 +27,7 @@ public class WindowsTests extends BaseTest
     @Test
     public void testNewTabURL()
     {
-        WindowsPage windowsPage = homePage.goToAlertsFramesWindows().clickBrowserWindowsElement();
+        WindowsPage windowsPage = homePage.goToAlertsFramesWindows().clickBrowserWindowsMenuItem();
         windowsPage.clickNewTabButton();
 
         windowsPage.switchToNewWindow();

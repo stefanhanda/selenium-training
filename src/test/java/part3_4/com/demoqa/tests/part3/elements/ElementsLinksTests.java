@@ -10,7 +10,7 @@ public class ElementsLinksTests extends BaseTest
     @Test
     public void TestLinks()
     {
-        ElementsLinksPage linksElement = homePage.goToElements().clickLinksElement();
+        ElementsLinksPage linksElement = homePage.goToElements().clickLinksMenuItem();
         linksElement.clickBadRequestLink();
 
         String actualResponse = linksElement.getResponse();

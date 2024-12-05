@@ -10,7 +10,7 @@ public class ElementsRadioButtonTests extends BaseTest
     @Test
     public void TestYesRadioButton()
     {
-        ElementsRadioButtonPage elementsRadioButtonPage = homePage.goToElements().clickRadioButtonElement();
+        ElementsRadioButtonPage elementsRadioButtonPage = homePage.goToElements().clickRadioButtonMenuItem();
         elementsRadioButtonPage.clickYesRadioButton();
 
         boolean isClicked = elementsRadioButtonPage.isYesRadioButtonClicked();
@@ -19,7 +19,7 @@ public class ElementsRadioButtonTests extends BaseTest
     @Test
     public void TestImpressiveRadioButton()
     {
-        ElementsRadioButtonPage elementsRadioButtonPage = homePage.goToElements().clickRadioButtonElement();
+        ElementsRadioButtonPage elementsRadioButtonPage = homePage.goToElements().clickRadioButtonMenuItem();
         elementsRadioButtonPage.clickImpressiveRadioButton();
 
         boolean isClicked = elementsRadioButtonPage.isImpressiveRadioButtonClicked();
@@ -28,7 +28,7 @@ public class ElementsRadioButtonTests extends BaseTest
     @Test
     public void TestNoRadioButton()
     {
-        ElementsRadioButtonPage elementsRadioButtonPage = homePage.goToElements().clickRadioButtonElement();
+        ElementsRadioButtonPage elementsRadioButtonPage = homePage.goToElements().clickRadioButtonMenuItem();
         elementsRadioButtonPage.clickNoRadioButton();
 
         boolean isClicked = elementsRadioButtonPage.isNoRadioButtonClicked();

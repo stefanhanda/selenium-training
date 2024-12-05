@@ -6,7 +6,7 @@ import static utilities.GetUtility.getText;
 import static utilities.JavaScriptUtility.*;
 import static utilities.WaitUtility.*;
 
-public class WidgetsProgressBar extends WidgetsPage
+public class WidgetsProgressBarPage extends WidgetsPage
 {
     private final By startProgressBarButton = By.id("startStopButton");
     private final By progressValue = By.xpath("//div[@id='progressBar']/div[@aria-valuenow='100']");

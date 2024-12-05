@@ -12,7 +12,7 @@ public class ElementsWebTableTests extends BaseTest
     {
         String inputEmail = "kierra@example.com";
         String inputAge = "69";
-        ElementsWebTablesPage elementsWebTablesPage = homePage.goToElements().clickWebTablesElement();
+        ElementsWebTablesPage elementsWebTablesPage = homePage.goToElements().clickWebTablesMenuItem();
 
         elementsWebTablesPage.clickEditButton(inputEmail);
         elementsWebTablesPage.setFieldText("age",inputAge);
@@ -33,7 +33,7 @@ public class ElementsWebTableTests extends BaseTest
         String inputSalary = "12345";
         String inputDepartment = "TestDepartment";
 
-        ElementsWebTablesPage elementsWebTablesPage = homePage.goToElements().clickWebTablesElement();
+        ElementsWebTablesPage elementsWebTablesPage = homePage.goToElements().clickWebTablesMenuItem();
 
         elementsWebTablesPage.clickEditButton(inputEmail);
         elementsWebTablesPage.setFieldText("firstName",inputFName);

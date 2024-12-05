@@ -1,7 +1,7 @@
 package part3_4.com.demoqa.tests.part4.dynamic_wait;
 
 import com.demoqa.pages.elements.ElementsDynamicProperties;
-import com.demoqa.pages.widgets.WidgetsProgressBar;
+import com.demoqa.pages.widgets.WidgetsProgressBarPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import part3_4.com.demoqa.base.BaseTest;
@@ -11,7 +11,7 @@ public class DynamicWaitTests extends BaseTest
     @Test
     public void testVisibleAfterButtonText()
     {
-        ElementsDynamicProperties dynamicPage = homePage.goToElements().clickDynamicPropertiesElement();
+        ElementsDynamicProperties dynamicPage = homePage.goToElements().clickDynamicPropertiesMenuItem();
         String actualText = dynamicPage.getVisibleAfterButtonText(5000);
         String expectedText = "Visible After 5 Seconds";
 
@@ -21,7 +21,7 @@ public class DynamicWaitTests extends BaseTest
     @Test
     public void testProgressBar()
     {
-        WidgetsProgressBar progressBar = homePage.goToWidgets().clickProgressBar();
+        WidgetsProgressBarPage progressBar = homePage.goToWidgets().clickProgressBarMenuItem();
         progressBar.clickStartButton();
         String actualValue = progressBar.getProgressValue(30000);
         String expectedValue = "100%";

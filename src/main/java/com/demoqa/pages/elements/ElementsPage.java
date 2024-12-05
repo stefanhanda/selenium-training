@@ -8,36 +8,36 @@ import static utilities.JavaScriptUtility.scrollToElementJS;
 
 public class ElementsPage extends HomePage
 {
-    private final By radioButtonElement = By.xpath("//li[@id='item-2']//span[text()='Radio Button']");
-    private final By webTablesElement = By.xpath("//li[@id='item-3']//span[text()='Web Tables']");
-    private final By linksElement = By.xpath("//li[@id='item-5']//span[text()='Links']");
-    private final By dynamicElement = By.xpath("//li[@id='item-8']//span[text()='Dynamic Properties']");
+    private final By radioButtonMenuItem = By.xpath("//li[@id='item-2']//span[text()='Radio Button']");
+    private final By webTablesMenuItem = By.xpath("//li[@id='item-3']//span[text()='Web Tables']");
+    private final By linksMenuItem = By.xpath("//li[@id='item-5']//span[text()='Links']");
+    private final By dynamicMenuItem = By.xpath("//li[@id='item-8']//span[text()='Dynamic Properties']");
 
-    public ElementsDynamicProperties clickDynamicPropertiesElement()
+    public ElementsDynamicProperties clickDynamicPropertiesMenuItem()
     {
-        scrollToElementJS(dynamicElement);
-        clickElementJS(dynamicElement);
+        scrollToElementJS(dynamicMenuItem);
+        clickElementJS(dynamicMenuItem);
 
         return new ElementsDynamicProperties();
     }
-    public ElementsRadioButtonPage clickRadioButtonElement()
+    public ElementsRadioButtonPage clickRadioButtonMenuItem()
     {
-        scrollToElementJS(radioButtonElement);
-        clickElementJS(radioButtonElement);
+        scrollToElementJS(radioButtonMenuItem);
+        clickElementJS(radioButtonMenuItem);
 
         return new ElementsRadioButtonPage();
     }
-    public ElementsWebTablesPage clickWebTablesElement()
+    public ElementsWebTablesPage clickWebTablesMenuItem()
     {
-        scrollToElementJS(webTablesElement);
-        clickElementJS(webTablesElement);
+        scrollToElementJS(webTablesMenuItem);
+        clickElementJS(webTablesMenuItem);
 
         return new ElementsWebTablesPage();
     }
-    public ElementsLinksPage clickLinksElement()
+    public ElementsLinksPage clickLinksMenuItem()
     {
-        scrollToElementJS(linksElement);
-        clickElementJS(linksElement);
+        scrollToElementJS(linksMenuItem);
+        clickElementJS(linksMenuItem);
 
         return new ElementsLinksPage();
     }

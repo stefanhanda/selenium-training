@@ -8,29 +8,37 @@ import static utilities.JavaScriptUtility.scrollToElementJS;
 
 public class WidgetsPage extends HomePage
 {
-    private final By selectMenu = By.xpath("//li[@id='item-8']//span[text()='Select Menu']");
-    private final By datePicker = By.xpath("//li[@id='item-2']//span[text()='Date Picker']");
-    private final By progressBar = By.xpath("//li[@id='item-4']//span[text()='Progress Bar']");
+    private final By selectMenuMenuItem = By.xpath("//li[@id='item-8']//span[text()='Select Menu']");
+    private final By datePickerMenuItem = By.xpath("//li[@id='item-2']//span[text()='Date Picker']");
+    private final By progressBarMenuItem = By.xpath("//li[@id='item-4']//span[text()='Progress Bar']");
+    private final By sliderMenuItem = By.xpath("//li[@id='item-3']//span[text()='Slider']");
 
-    public WidgetsProgressBar clickProgressBar()
+    public WidgetsProgressBarPage clickProgressBarMenuItem()
     {
-        scrollToElementJS(progressBar);
-        clickElementJS(progressBar);
+        scrollToElementJS(progressBarMenuItem);
+        clickElementJS(progressBarMenuItem);
 
-        return new WidgetsProgressBar();
+        return new WidgetsProgressBarPage();
     }
-    public WidgetsSelectMenuPage clickSelectMenu()
+    public WidgetsSelectMenuPage clickSelectMenuMenuItem()
     {
-        scrollToElementJS(selectMenu);
-        clickElementJS(selectMenu);
+        scrollToElementJS(selectMenuMenuItem);
+        clickElementJS(selectMenuMenuItem);
 
         return new WidgetsSelectMenuPage();
     }
-    public WidgetDatePickerPage clickDatePicker()
+    public WidgetDatePickerPage clickDatePickerMenuItem()
     {
-        scrollToElementJS(datePicker);
-        clickElementJS(datePicker);
+        scrollToElementJS(datePickerMenuItem);
+        clickElementJS(datePickerMenuItem);
 
         return new WidgetDatePickerPage();
+    }
+    public WidgetsSliderPage clickSliderMenuItem()
+    {
+        scrollToElementJS(sliderMenuItem);
+        clickElementJS(sliderMenuItem);
+
+        return new WidgetsSliderPage();
     }
 }

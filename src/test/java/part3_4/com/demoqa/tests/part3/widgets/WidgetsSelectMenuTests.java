@@ -10,7 +10,7 @@ import java.util.List;
 public class WidgetsSelectMenuTests extends BaseTest {
     @Test
     public void TestSelectMenuMultiSelect() {
-        WidgetsSelectMenuPage selectMenuPage = homePage.goToWidgets().clickSelectMenu();
+        WidgetsSelectMenuPage selectMenuPage = homePage.goToWidgets().clickSelectMenuMenuItem();
         selectMenuPage.selectStandardMulti("Volvo");
         selectMenuPage.selectStandardMulti(1);
         selectMenuPage.selectStandardMulti("Audi");
@@ -28,7 +28,7 @@ public class WidgetsSelectMenuTests extends BaseTest {
     @Test
     public void TestSelectMenuOldSelect()
     {
-        WidgetsSelectMenuPage selectMenuPage = homePage.goToWidgets().clickSelectMenu();
+        WidgetsSelectMenuPage selectMenuPage = homePage.goToWidgets().clickSelectMenuMenuItem();
         selectMenuPage.selectOldSelectMenu("8");
 
         String actualSelectedOption = selectMenuPage.getSelectedOption();

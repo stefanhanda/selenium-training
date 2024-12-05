@@ -17,7 +17,7 @@ public class WidgetsDatePickerTests extends BaseTest
         String year = "2001";
         String day = "31";
 
-        WidgetDatePickerPage datePicker = homePage.goToWidgets().clickDatePicker();
+        WidgetDatePickerPage datePicker = homePage.goToWidgets().clickDatePickerMenuItem();
 
         datePicker.clickSelectDate();
         datePicker.selectMonth(month);
