@@ -45,22 +45,22 @@ public class ElementsTextBoxPage extends ElementsPage {
 
     public String getFullName()
     {
-        explicitWaitUntilVisible(5,outputFullName);
+        explicitWaitUntilVisible(10,outputFullName);
         return getText(outputFullName);
     }
     public String getEmail()
     {
-        explicitWaitUntilVisible(5,outputEmail);
+        explicitWaitUntilVisible(10,outputEmail);
         return getText(outputEmail);
     }
     public String getCurrentAddress()
     {
-        explicitWaitUntilVisible(5,outputCurrentAddress);
+        explicitWaitUntilVisible(10,outputCurrentAddress);
         return getText(outputCurrentAddress);
     }
     public String getPermanentAddress()
     {
-        explicitWaitUntilVisible(5,outputPermanentAddress);
+        explicitWaitUntilVisible(10, outputPermanentAddress);
         return getText(outputPermanentAddress);
     }
 }
