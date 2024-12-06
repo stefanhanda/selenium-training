@@ -3,11 +3,13 @@ package utilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class WaitUtility extends Utility
 {
@@ -24,5 +26,10 @@ public class WaitUtility extends Utility
                 .ignoring(NoSuchElementException.class, StaleElementReferenceException.class);
 
         fluentWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+    // Method to set the implicit wait
+    public static void setImplicitWait(WebDriver driver, int timeInSeconds)
+    {
+        driver.manage().timeouts().implicitlyWait(timeInSeconds, TimeUnit.SECONDS);
     }
 }
