@@ -5,20 +5,27 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import part3_4.com.demoqa.base.BaseTest;
 
+import static com.base.BasePage._delay;
+
 public class FileDownloadTests extends BaseTest
 {
     @Test
-    public void testDownloadFile()
+    public void testFileDownload()
     {
+        String downloadFile = "/sampleFile.jpeg";
+
         ElementsUploadDownloadPage downloadPage = homePage.goToElements().clickUploadDownloadMenuItem();
 
-        String downloadFileName = "sampleFile.jpeg";
-        String downloadDirectory = "C:\\Users\\Stefan\\Downloads";
+        downloadPage.clearDownloadDirectory(downloadDir);
 
-       // downloadPage.prepareForDownload(downloadDirectory);
-       // downloadPage.clickDownloadButton();
+        downloadPage.clickDownloadButton();
 
-        Assert.assertTrue(downloadPage.verifyDownload(downloadDirectory,downloadFileName),
-                "Download was not performed successfully!");
+        // Wait for the file to download
+         _delay(1000);
+
+        // Verify the downloaded file
+        Assert.assertTrue(downloadPage.verifyDownload(downloadDir,downloadFile),
+                "Downloaded File does not exist!");
     }
+
 }

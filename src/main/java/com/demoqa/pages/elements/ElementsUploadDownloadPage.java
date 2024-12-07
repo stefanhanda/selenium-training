@@ -4,12 +4,11 @@ import org.openqa.selenium.By;
 
 import java.awt.*;
 
-import static utilities.DownloadUtility.setUpForDownload;
 import static utilities.DownloadUtility.verifyDownloadedFile;
 import static utilities.GetUtility.getText;
 import static utilities.JavaScriptUtility.*;
 import static utilities.RobotUtility.robotFileUpload;
-import static utilities.WaitUtility.setImplicitWait;
+import static utilities.DownloadUtility.*;
 
 public class ElementsUploadDownloadPage extends ElementsPage
 {
@@ -40,12 +39,12 @@ public class ElementsUploadDownloadPage extends ElementsPage
         clickElementJS(downloadButton);
         _delay(3000);
     }
-    public void prepareForDownload(String downloadDir)
-    {
-        setUpForDownload(downloadDir);
-    }
     public boolean verifyDownload(String downloadDir, String fileName)
     {
         return verifyDownloadedFile(downloadDir,fileName);
+    }
+    public void clearDownloadDirectory(String downloadDir)
+    {
+        clearDirectory(downloadDir);
     }
 }

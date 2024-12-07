@@ -6,6 +6,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -26,13 +27,25 @@ public class BaseTest
     protected BasePage basePage;
     protected HomePage homePage;
     private final String DEMOQA_URL="https://demoqa.com/";
+    protected String downloadDir = "D:\\DownloadSeleniumFolder";
     Dimension dimension = new Dimension(1280,720);
 
     @BeforeClass
     public void Precondition()
     {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--start-maximized");
+        options.addArguments("--disable-popup-blocking");
+        options.addArguments("--disable-notifications");
+        // Set Chrome preferences for file download
+        options.setExperimentalOption("prefs", new java.util.HashMap<String, Object>() {{
+            put("download.default_directory", downloadDir);
+            put("download.prompt_for_download", false);
+            put("download.directory_upgrade", true);
+            put("safebrowsing.enabled", true);
+        }});
+
+        driver = new ChromeDriver(options); // Initialize the driver with default settings
         driver.manage().window().setSize(dimension);
     }
     @BeforeMethod
